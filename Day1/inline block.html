@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inline Example</title>
+    <style>
+        .box{
+            background-color: crimson;
+            width: 200px;
+            height: 200px;
+            border: 3px solid black;
+            display: block;
+            /*display: inline-block; 인라인블록의 박스는 블록이지만 옆에 존재할 수 있다. 쉽게 말하면 서로서로 붙어있는 상황을 의미한다.*/
+            /*display: inline; 인라인은 기존의 설정을 무시하고 콘텐츠 텍스트의 크기만큼 적용을 시켜준다. */
+        }
+    </style>
+</head>
+<body>
+    <div class="box">1</div> <!--블록은 element의 크기에 상관없이 옆에 아무것도 존재하지 않는것을 의미-->
+    <div class="box">1</div> <!--박스는 인라인-블록이나 블록중 하나가 되어야한다. -->
+    <div class="box">1</div> 
+</body>
+</html>

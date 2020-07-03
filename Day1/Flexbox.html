@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+    <style>
+        html, body{
+            height: 100%;
+        }
+        .father{
+            display: flex; 
+            /*
+            자식에게 말하지 않고 부모에게 지정해준다면 자식에게 inline block을 해줄 필요가 없어진다. 
+            */
+            justify-content: space-around;
+            /* 
+            justify-content: center; 가운데로 정렬하기
+            space-between,일정한 간격으로 쪼개지는 것
+            space-around, 컨텐츠 뿐만 아니라 주변도 같은 간격으로 조정이 된다
+            */
+            align-items: flex-start; 
+            /*
+            html, body{height: 100%}와 연동되어 컨텐츠를 center, flex-end, flex-start로 정렬시켜주는 역활을 한다. 
+            */ 
+            height: 100%;
+            flex-direction: row-reverse;
+            /*
+            contents들을 수직으로 정렬시켜준다. default값인 row로 지정하면 수평적으로 바뀐다.  
+            column일 때 align-items로 수평적이게 움직일 수 있다. ex) start가 왼족 끝, end가 오른쪽 끝
+            reverse 적용시 순서가 박스들의 순서가 변경이 된다. 
+            */
+            flex-wrap: wrap; 
+            /*
+            box contents들이 wrap으로 했을경우 창이 좁아지면 줄어들지 않고 아래로 내려온다.
+            reverse 적용시 위치가 뒤바뀐다
+            */
+        }
+        .Box{
+            background-color: red;
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="Box">1</div>
+        <div class="Box">2</div>
+        <div class="Box">3</div>
+        <div class="Box">4</div>
+        <div class="Box">5</div>
+        <div class="Box">6</div>
+        <div class="Box">7</div>
+        <div class="Box">8</div>
+        <div class="Box">9</div>
+        <div class="Box">10</div>
+    </div>
+</body>
+</html>

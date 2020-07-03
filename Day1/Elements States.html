@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS States</title>
+    <style>
+        
+        .box{
+            background-color: red;
+            font-size: 40px;
+        }
+        
+        .box:hover{
+            background-color: pink;
+        }
+        /*
+        마우스를 갖다 대면 색깔이 변함
+        */
+        .box:active{
+            background-color: green;
+        }
+        /*
+        마우스로 클릭하면 색깔이 변함
+        */
+        .box:focus{
+            background-color: blue;
+        }
+        /*
+        가장 강력한 명령어이기 때문에 active와 hover는 무시
+        */
+    </style>
+</head>
+<body>
+    <textarea class="box">lalalalalalalaall</textarea>
+</body>
+</html>

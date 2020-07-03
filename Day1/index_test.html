@@ -1,0 +1,25 @@
+<!DOCTYPE html> <!-- 컴퓨터에게 이 파일이 html이라는 것을 알려준다자신이 열고 닫는 구조 따로 닫아줄 필요없이 그것 자체로 정보-->
+<html> <!--컴퓨터는 이 태그안에 있는 것을 컴퓨터가 html로 인식해준다. -->
+    <head> <!--유저에게 보이지 않고 브라우저에게 웹사이트에 관한 정보를 제공해주는 부분-->
+        <meta charset="UTF-8"> <!--각 언어를 보여주기 위한 방식 영어 한국어 등등 만약 실패한다면 글자가 깨지는 현상이 나타남-->
+        <meta name="author" content="JSH">
+        <meta name="description" content="this can see only by web browser not user"> <!--간단한 예시로 구글에 검색을 했을때 페이지 아래에 보여주는 간단한 글귀를 말한다.-->
+        <title>this is my title</title>
+        <link href="styles.css" rel="stylesheet">
+    </head>
+    <body><!--사림들이 보게될 실제 내용은 여기에 들어가게 된다. -->
+        <section>
+            <header id="numberOnetitle" class="defaultheader"> <!--id는 고유한 속성이기 때문에 두개가 올 수 없다. 반면 class는 여러개가 존재할 수 있다.-->
+                <h1>Title of a section</h1>
+            </header>
+        </section>
+
+        <a href="contact_CSS.html">some Link</a>
+
+        <div>
+            <header id="differentheader" class="defaultheader"> <!--ID는 다르지만 Class는 같다.-->
+                Title of the unknown container
+            </header> <!--구분하기 힘든 헤더들은 Class나 ID로 지정해주는 것이 좋다.-->
+        </div>
+    </body>
+</html>

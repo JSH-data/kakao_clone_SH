@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition</title>
+    <style>
+        .box{
+            background-color: green;
+            color: white;
+            transition: background-color .5s ease-in-out;
+            /*
+            Elements state를 적용할 때 지정해준것들이 서서히 변경된다 바뀌는 효과, 두개 이상 설정값을 바꾸길 원한다면 all을 지정해준다. focus, hover, active에서 유용
+            */
+        }
+        .box:active{
+            background-color: red;
+            color: blue;
+
+        }
+    </style>
+</head>
+<body>
+    <span class="box">
+        Text
+    </span>
+</body>
+</html>
+

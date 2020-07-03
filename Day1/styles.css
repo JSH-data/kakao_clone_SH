@@ -1,0 +1,8 @@
+h1 { 
+    color: green; 
+    font-size: 15px;
+}
+/*
+    <link href="styles.css" rel="stylesheet"> html의 head에 추가해 주면 
+    추가해준 모든 파일에 css가 연결되어 inline처럼 비효율적으로 붙여넣기를 하지 않다도 된다.
+*/

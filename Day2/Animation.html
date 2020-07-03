@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        .box{
+            height: 100px;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            width: 200px;
+            background-color: red;
+            animation: 1.5s rotateSquare infinite ease-in-out;
+        }
+        @keyframes rotateSquare{
+            0%{
+                transform: none;
+            }
+            50%{
+                transform: rotate(1turn) scale(.5, .5);
+            }
+            100%{
+                transform: none;
+            }
+        }
+        /*
+        from부터 to까지 변화하는 animation을 제작. .
+        0%~100%로 변경하여 loop를 줄 수도 있음
+        .box의 효과앞에 infinite를 주면 무한으로 실행
+        그렇지 않으면 단 한 번 시행
+        */
+    </style>
+</head>
+<body>
+    <div class="box">뱅뱅 돌아~</div>
+</body>
+</html>

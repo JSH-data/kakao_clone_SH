@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box model</title>
+    <style> /* inline 방식으로 css연결*/
+        body,html{ /* html의 전체에 배경색을 지정*/
+            padding: 0;
+            margin: 0;
+            background-color: green;
+            height: 100%;
+        }
+        .box{
+            background-color: yellow;
+            width: 50%;
+            height: 50%;
+            padding-top: 50px; /* 패딩을 활용하여 공백을 만들어 줄 수 있다.*/
+            padding-left: 50px;
+            margin-top: 50px;
+            margin-left: 50px;
+
+            /*padding: 50px; 시 상하 좌우 모두 50px적용
+              padding: 20px 10px; 시 상하 20, 좌우 10 적용
+              paddinf: 5px 10px 7px 9px; 시 상 우 하 좌 순서 적용 
+            */
+        }
+        .inside-box{
+            background-color: blue;
+            width: 50%;
+            height: 50%;
+
+            border: crimson; /*테두리를 의미하는 것.. */
+            border-width: 5px;
+            border-style: dashed;
+            /* 위 세가지를 합치는 방법
+               border: 5px dashed crimson; 
+            */
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="inside-box"></div>
+    </div>
+</body>
+</html>

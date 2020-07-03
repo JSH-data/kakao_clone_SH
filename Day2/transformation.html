@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformation</title>
+    <style>
+        .box{
+            height: 100px;
+            width: 200px;
+            background-color: red;
+            transition: transform .2s ease-in-out;/* outs를 사용할 경우 하나의 transform효과가 적용이된다*/
+        }
+        .box:hover{
+            transform: rotate(1turn) scale(.5, .5); /*여러개를 동시에 사용할 수 있고 rotate는 각도 혹은 turn으로 돌린다.*/
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
+
+<!--https://developer.mozilla.org/en-US/docs/Web/CSS/transform 관련 링크-->
