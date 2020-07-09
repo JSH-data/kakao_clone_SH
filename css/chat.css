@@ -1,0 +1,235 @@
+.header-wrapper{ /*header 고정시키기*/
+    background-color: white;
+    padding: 5px 0px;
+    position: fixed;
+    z-index: 2; /* 메시지들이 헤더위로 오는것을 막아줌*/
+    top: 0px;
+    width: 100%;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,.1), 0 10px 10px -5px rgba(0,0,0,.04);
+    /*수평, 수직, Blur값*/
+}
+
+.chat__write-container{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    right: 0;
+    left: 0;
+    margin: 0 auto; /*화면의 중앙에 위치시키는 방법*/
+    bottom: 0;
+}
+
+.chat__write{
+    bottom: 0px;
+    margin: 0 auto; /* focus적용시 가운데로 정렬되게 도와준다. 이건 annimate가 불가능하다 */
+    width: 100%;
+    border-radius: 0;
+    padding: 20px 60px;
+    width: 100%;
+    font-size: 14px;
+    border: none;
+    transition: width .5s ease-in-out, border-radius 0.5s ease-in-out, transform 0.5s ease-in-out; /*focus적용시 부드러운 모션을 보여준다. width에 대해서만 */
+}
+
+.chat__write .chat__write-column i {
+    font-size: 22px;
+}
+
+.chat__write-column:nth-last-child(2) {
+    width: 80%; /*의미를 모르겠다...*/
+}
+
+.chat__write-column input {
+    padding: 20px 10px;
+    width: 100%;
+    font-size: 14px;
+    border: none;
+}
+
+.chat__write:focus {
+    outline: none;
+    width: 80%;
+    transform: translateY(-100px);
+    border-radius: 40px;
+    box-shadow: 0 20px 70px -5px rgba(0,0,0,.1), 0 10px 10px -5px rgba(0,0,0,.04);
+    animation: float 2s linear infinite forwards;
+}
+
+.chats-body {
+    padding: 10px 0px;
+    padding-top: 100px;
+    min-height: 100px;
+}
+
+.chats-body .header, 
+.chats-body .status-bar {
+    padding : 0px 20px;
+}
+
+.chat-screen {
+    background-image: url("../images/chatbg.png");
+    min-height: 100vh;
+}
+
+.chat-screen .chat__messages{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px, 20px;
+    padding-top: 20px;
+    border-top: 1px solid #f7f7f7;
+}
+
+.chat__messages .chat__timestamp{
+    background-color: white;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,.1), 0 10px 10px -5px rgba(0,0,0,.04);
+    text-transform: uppercase;
+}
+
+.message {
+    display : flex;
+    align-items: flex-start; 
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.message .message__content {
+    text-align: right;
+    float: right;
+}
+
+.incomming-message.message img {
+    width :30px;
+    border-radius: 15px;
+    margin: 0px 15px;
+    margin-top: 0;
+    animation: spin 1s linear forwards;
+
+}
+
+@keyframes spin{
+    from{
+        transform: none;
+    }
+    to{
+        transform: rotateY(1turn);
+    }
+}
+
+.incomming-message {
+    align-self: flex-start; /*속성이 column으로 되어 있는 것이기에 왼쪽부터 시작되는게 맞다. */
+}
+
+.sending-message {
+    align-self: flex-end;
+}
+
+.message .message__bubble{
+    background-color: white;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,.1), 0 10px 10px -5px rgba(0,0,0,.04);;
+    padding: 8px 15px;
+    border-radius: 22px;
+    font-weight: 600;
+    display: block; /* 텍스트를 div처럼 만들어준다. */
+    font-size: 19px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+
+.message .message__author {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.incomming-message .message__bubble{
+    border-bottom-left-radius: 0px;
+    background-image: linear-gradient(to right, #70e1f5, #ffd194);
+}
+
+.sending-message .message__bubble{
+    border-bottom-right-radius: 0px;
+}
+
+.sending-message.message {
+    width: 30%;
+}
+
+.chat__icon-left{
+    position: absolute;
+    left: 10px;
+}
+
+.chat__icon-right {
+    position: absolute;
+    right: 10px;
+}
+
+.chat__write:focus ~ .chat__icon{ /* opacity가 transsition이 가능하기 때문에 이렇게 놓고 사용하는 것이다.!!!*/
+    opacity: 0;
+}
+
+.chat__icon{
+    font-size: 18px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* focus로 효과를 주고 싶을 때 html의 요소들이 메인요소 보다 뒤쪽에 위치해햐 한다.
+그래야지 선택하여 효과를 줄 수 있기 때문이다. 이 부분에서는 input의 뒤에 모든 icon들을 배치함으로서
+icon이 opcity로 사라지는 효과를 줄 수 있었다. */
+
+
+@keyframes float {
+    0%{
+
+        box-shadow: 0 20px 80px 5px rgba(0,0,0,.1), 0 10px 10px -5px rgba(0,0,0,.04);
+    }
+    50%{
+        box-shadow: 0 20px 80px -60px rgba(0,0,0,.1), 0 10px 10px -5px rgba(0,0,0,.04);
+    }
+    100%{
+        box-shadow: 0 20px 80px 5px rgba(0,0,0,.1), 0 10px 10px -5px rgba(0,0,0,.04);
+    }
+}
+
+.incomming-message {
+    animation: incommingAnimation 0.5s ease-out forwards;
+}
+
+@keyframes incommingAnimation{
+    from{
+        transform: translateX(-150px);
+        opacity: 0;
+    }
+    to{
+        transform: none;
+        opacity: 1;
+    }
+
+}
+
+.sending-message {
+    animation: sendingAnimation 0.5s linear forwards;
+}
+
+@keyframes sendingAnimation{
+    from{
+        transform: translateX(150px);
+        opacity: 0;
+    }
+    to{
+        transform: none;
+        opacity: 1;
+    }
+
+}

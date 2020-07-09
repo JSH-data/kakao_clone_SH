@@ -1,0 +1,46 @@
+.nav {
+    position: fixed; /*fixed를 사용하고 싶을 때는 반드시 width를 사용해 주어야한다.! */
+    width: 100%;
+    background-color: #fcfcfc;
+    left: 0;
+    bottom: 0;
+    padding: 20px 50px; /* 상하, 좌우 적용 */
+    border-top: 1px solid #f7f7f7;
+    animation: showNavBar .5s ease-out forwards;
+    animation-delay: 0.5s;
+    transform: translateY(80px);
+}
+
+.nav .nav__list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav .nav__list-link {
+    position: relative; /* 뱃지가 바디가 아닌 카카오톡 링크에 붇어있게 만들어주는 것 */
+}
+
+.nav .nav__badge {
+    position: absolute;
+    background-color: #dc5d46;
+    right: -7px;
+    top: -7px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 17px;
+    width: 17px;
+    border-radius: 50%; /*동그라미! height와 width의 절반값을 주는 것*/
+    font-size: 12px;
+}
+
+@keyframes showNavBar {
+    from {
+        transform: translateY(80px);
+    }
+    to{
+        transform: none;
+    }
+}
+
